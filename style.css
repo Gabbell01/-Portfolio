@@ -1,0 +1,393 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #1e1e2a;
+}
+/* header */
+
+
+.header-container{ 
+  height: 100vh;
+  width: 100%;
+  background-image:url('./IMG/imagem\ 2.png'), linear-gradient(to right, rgb(95, 93, 93) , rgb(26, 11, 240));
+  background-repeat:no-repeat ;
+  background-position: right;
+  background-size:contain ;
+  display: flex;
+  flex-direction: column;
+  justify-content:center ;
+  align-items: flex-start;
+  box-sizing: border-box;
+  padding: 40px 122px;
+  position: relative;  
+  
+}
+
+
+h1{
+  font-size: 60px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  height: 27px;
+
+}
+
+h2 .calculadora{
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  
+}
+p{ 
+  font-family: 'Poppins', sans-serif;
+  
+    color: #0b0b0c;
+    text-align: center;
+    width: 100%;
+  
+}
+
+.social-midia{
+  margin-top: 1rem;
+  display: flex;
+}
+
+.social-midia a{
+
+  font-size: 22px;
+  text-decoration: none;
+  color: #111010;
+  padding: 1rem 4rem;
+  border: 1px solid #0000f0;
+  min-width: 4rem; ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: .5s ease-in-out ;
+  
+
+}
+
+a:hover{
+background-color: rgb(41, 73, 102);
+}
+/*------------menu----------  */
+.sobre{ 
+  width: 100%;
+height: 100px;
+text-align: center;
+display: center;
+align-items: center;
+justify-content: center;
+letter-spacing: 1px;
+color: #111010;
+font-size: 20px;
+font-family: 'Poppins', sans-serif;
+margin: 0;
+}
+/*------------menu---------- */
+
+.checkbox-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.checkbox {
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+  z-index:9999;
+  transition: 400ms ease-in-out 0s;
+}
+
+.checkbox, .tracer {
+
+  width: 50px ;
+  height: 4px;
+  background-color: #212277;
+  position: absolute;
+  border-radius: 4px;
+  transition: 0.5 ease-in-out;
+}
+
+
+.checkbox .tracer:nth-child(1){
+  top: 26px;
+  transform: rotate(0);
+}
+.checkbox .tracer:nth-child(2){
+  top: 46px;
+  transform: rotate(0);
+}
+
+.checkbox  .tracer:nth-child(3){
+  top: 66px;
+  transform: rotate(0); }
+
+
+#toggle  {
+  display: none;
+}
+
+ /*-----------menu----------*/
+
+ .menu{
+  position: absolute;
+  top: 28px;
+  right: 30px;
+  background-color: transparent;
+  height: 4px;
+  width: 10px;
+  border-radius: 50%;
+  box-shadow:0px 0px 0px 0px #1317f5;
+  z-index: -1 ;
+  transition: 400ms ease-in-out 0s;
+
+}
+
+.menu-items{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  transition: 400ms ease-in-out 0s;
+
+}
+
+.menu-items, ul{
+ list-style: none ;
+
+}
+
+.menu-items, ul, li, a{
+  
+  margin: 10px 0 ;
+  color: #1e1e2a;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 30px;
+  text-align: center; 
+  border-radius: 4px;  
+}
+
+/*---------animação menu--------*/
+
+#toggle:checked +.checkbox .tracer:nth-child(1){
+  transform: rotate(45deg);
+
+  top: 47px;}
+
+
+#toggle:checked + .checkbox .tracer:nth-child(2){
+  transform: translate(-100px);
+  width: 30px;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#toggle:checked + .checkbox .tracer:nth-child(3){
+transform: rotate(-45deg);
+top: 48px;
+}
+
+#toggle:checked + .checkbox{
+background-color: #ffffff;
+}
+ 
+#toggle:checked ~.menu{
+
+  box-shadow:  0px 0px 0px 100vmax #ffffff;
+  z-index: 1;
+
+}
+#toggle:checked ~ .menu-items{
+  visibility: visible;
+  opacity: 1;
+}
+
+/*-----------cards---------*/
+
+.container{
+
+  height: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 3rem 0;
+
+}
+
+.card-container{
+
+display: flex;
+align-items: center;
+width: 90%;
+
+
+}
+
+.card{
+  width:300px;
+  height: 300px;
+  border-radius: 100%;
+  margin: 3rem 0 0 0 ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0000f0;
+  background-image: url('./IMG/calculadora.png');
+  background-position: center;
+  background-size:cover ;
+  background-repeat: no-repeat;
+  filter: grayscale(0.5);
+  color: #111010;
+  cursor: pointer;
+  transition:0.5 ease-in-out;
+  margin:50px;
+  
+  
+}
+
+.card2{
+  width:300px;
+  height: 300px;
+  border-radius: 100%;
+  margin: 3rem 0 0 0 ;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0000f0;
+  background-image: url('./IMG/imagem\ 1.png');
+  background-position: center;
+  background-size:cover ;
+  background-repeat: no-repeat;
+  filter: grayscale(0.5);
+  color: #111010;
+  cursor: pointer;
+  transition:0.5 ease-in-out;
+  margin:50px;
+}
+
+.card-text{
+  width:70% ;
+  letter-spacing: 1px;
+  align-items: center;
+  
+}
+
+.card2-text{
+  width:70% ;
+  letter-spacing: 1px;
+  align-items: center;
+}
+
+
+.card-wrapper{
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+
+
+}
+
+.card-wrapper::before{
+content:'';
+position: absolute;
+height: 100px;
+width: 100px;
+border-radius: 50%;
+display: block;
+border: 3px solid #ffffff;
+opacity: 0;
+transition: 0.5 ease-in-out;
+
+}
+
+
+.card-wrapper h2{
+font-size: 40px;
+text-transform: uppercase;
+letter-spacing: 4px;
+margin: 0;
+transition: 0.5 ease-in-out;
+}
+
+.card-wrapper p{
+font-size: 0;
+visibility: visible;
+opacity: 0;
+font-weight: bold;
+text-transform: uppercase;
+transition: 0.5 ease-in-out;
+
+}
+
+.card:hover{
+  filter: unset;
+}
+
+.card:hover > .card-wrapper::before{
+height: 200px;
+width: 200px;
+opacity: 1;
+
+
+}
+
+.card:hover > .card-wrapper p {
+  opacity: 1;
+  visibility: visible;
+  font-size: 14px;
+}
+/*------------cards---------*/
+.card2:hover{
+  filter: unset;
+}
+
+.card2:hover> .card-wrapper::before{
+height: 200px;
+width: 200px;
+opacity: 1;
+
+
+}
+
+.card2:hover> .card-wrapper p {
+  opacity: 1;
+  visibility: visible;
+  font-size: 14px;}
+/*------------cards---------*/
+
+.footer{ 
+width: 100%;
+height: 100px;
+background-color: #4141ee;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #111010;
+font-size: 30px;
+}
+
+
+
